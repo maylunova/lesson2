@@ -1,3 +1,9 @@
+# telegram bot
+
+# Установите модуль ephem
+# Добавьте в бота команду /planet, которая будет принимать на вход название планеты на английском.
+# При помощи условного оператора if и ephem.constellation научите бота отвечать, в каком созвездии сегодня находится планета.
+
 from telegram.ext import Updater, CommandHandler, MessageHandler, Filters
 import logging
 import ephem
@@ -8,7 +14,7 @@ logging.basicConfig(format='%(name)s - %(levelname)s - %(message)s',
                     filename='bot.log')
 
 
-GREETING = 'Call the /planet command and find out which constellations the planets are in!'
+GREETING = 'Call the /planet command and find out in which constellations are the planets today!'
 
 
 def greet_user(bot, update):    
@@ -29,7 +35,6 @@ def talk_to_me(bot, update, user_data):
             update.message.reply_text(ephem_answer[1])
         except AttributeError:
              update.message.reply_text("I don't know {} planet.".format(planet_name,) + '\n' + GREETING)
-
 
         user_data['asked'] = False
 
