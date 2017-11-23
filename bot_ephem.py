@@ -37,7 +37,6 @@ def talk_to_me(bot, update, user_data):
              update.message.reply_text("I don't know {} planet.".format(planet_name,) + '\n' + GREETING)
 
         user_data['asked'] = False
-
     else:
         update.message.reply_text(GREETING)
 

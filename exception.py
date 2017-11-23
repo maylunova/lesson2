@@ -4,6 +4,7 @@
 # Переписать функцию ask_user(), добавив обработку exception-ов
 # Добавить перехват ctrl+C и прощание
 
+
 answers = {
     "Привет": "Здравствуй!", 
     "Как дела?": "Хорошо!",
@@ -15,6 +16,7 @@ answers = {
 
 def get_answer(question, answers):
     return answers[question]
+
 
 def ask_user(answers):
     while True:
